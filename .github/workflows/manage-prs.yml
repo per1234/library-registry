@@ -165,7 +165,6 @@ jobs:
       needs.parse.outputs.type == 'submission' ||
       needs.parse.outputs.type == 'modification'
     runs-on: ubuntu-latest
-
     outputs:
       pass: ${{ env.PASS }}
 
@@ -313,7 +312,6 @@ jobs:
           && steps.arduino-lint.outcome == 'failure'
         run: echo "PASS=false" >> "$GITHUB_ENV"
 
-
   check-submissions-fail:
     needs:
       - check-submissions
@@ -353,7 +351,6 @@ jobs:
       needs.parse.outputs.type == 'submission'
       && needs.check-submissions.outputs.pass == 'true'
     runs-on: ubuntu-latest
-
     outputs:
       pass: ${{ steps.merge.outcome == 'success' }}
 

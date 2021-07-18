@@ -2,6 +2,7 @@ https://github.com/per1234/EEPROMallocation
 https://github.com/per1234/EtherEvent
 https://github.com/per1234/EtherEventQueue
 https://github.com/per1234/MouseTo
+foo
 https://github.com/tfeldmann/Arduino-SchmittTrigger
 https://github.com/miathedev/KomootBLEConnect
 https://github.com/RobotGrrl/PolylineArduino

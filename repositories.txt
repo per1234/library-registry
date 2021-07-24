@@ -1,4 +1,4 @@
-https://github.com/per1234/ino-troubleshooting
+https://github.com/per1234/wirino
 https://github.com/MrYsLab/NeoPixelConnect
 https://github.com/bigsmalloverall/SimpleTaskManager
 https://github.com/Infineon/arduino-multi-half-bridge

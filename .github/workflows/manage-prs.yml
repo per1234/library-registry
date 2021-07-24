@@ -503,8 +503,8 @@ jobs:
   not-submission:
     needs:
       - parse
+    # These request types can't be automatically approved.
     if: >
-      # These request types can't be automatically approved.
       needs.parse.outputs.type != 'submission' &&
       needs.parse.outputs.type != 'invalid'
     runs-on: ubuntu-latest

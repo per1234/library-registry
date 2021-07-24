@@ -1,4 +1,4 @@
-https://www.arduino.cc/reference/en/foo
+https://www.arduino.cc/reference/en
 https://github.com/MrYsLab/NeoPixelConnect
 https://github.com/bigsmalloverall/SimpleTaskManager
 https://github.com/Infineon/arduino-multi-half-bridge

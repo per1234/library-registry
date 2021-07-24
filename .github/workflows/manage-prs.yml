@@ -1,7 +1,7 @@
 name: Manage PRs
 
 env:
-  SUBMISSION_PARSER_VERSION: 1.0.1 # See: https://github.com/arduino/library-manager-submission-parser/releases
+  SUBMISSION_PARSER_VERSION: 1.1.0 # See: https://github.com/arduino/library-manager-submission-parser/releases
   MAINTAINERS: |
     # GitHub user names to request reviews from in cases where PRs can't be managed automatically.
     - per1234
@@ -107,7 +107,7 @@ jobs:
         id: download-parser
         uses: carlosperate/download-file-action@v1.0.3
         with:
-          file-url: https://github.com/arduino/library-registry-submission-parser/releases/download/${{ env.SUBMISSION_PARSER_VERSION }}/parser
+          file-url: https://github.com/per1234/library-registry-submission-parser/releases/download/${{ env.SUBMISSION_PARSER_VERSION }}/parser
           location: ${{ runner.temp }}
 
       - name: Download diff

@@ -530,6 +530,7 @@ jobs:
   unexpected-fail:
     needs:
       # Run after all other jobs
+      - parse-fail
       - merge-fail
       - check-submissions-fail
       - label

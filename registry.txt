@@ -4214,3 +4214,4 @@ https://github.com/hideakitai/ESP32SPISlave.git|Contributed|ESP32SPISlave
 https://github.com/Zentser/esp-zentser-sdk.git|Contributed|Zentser ESP SDK
 https://github.com/per1234/MouseTo.git|Contributed|MouseTo
 https://github.com/per1234/MouseTo.git|Contributed|MouseTo
+https://github.com/per1234/EEPROMallocation.git|Contributed|EEPROMallocation

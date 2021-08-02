@@ -4219,3 +4219,4 @@ https://github.com/per1234/EEPROMallocation.git|Contributed|EEPROMallocation
 https://github.com/per1234/EtherEvent.git|Contributed|EtherEvent
 https://github.com/per1234/EtherEventQueue.git|Contributed|EtherEventQueue
 https://github.com/per1234/MouseTo.git|Contributed|MouseTo
+https://github.com/techpaul/XMC_Servo.git|Contributed|XMC_Servo

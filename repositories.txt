@@ -3691,7 +3691,7 @@ https://github.com/thijse/Arduino-EEPROMEx
 https://github.com/thijse/Arduino-Log
 https://github.com/thinger-io/Arduino-Library
 https://github.com/thinger-io/ClimaStick
-https://github.com/thinger-io/ClimaStick
+https://github.com/thinger-io/ClimaStickf
 https://github.com/thinger-io/Core32
 https://github.com/thingface/arduino
 https://github.com/ThingPulse/esp8266-oled-ssd1306

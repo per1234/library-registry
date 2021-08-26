@@ -1,3 +1,7 @@
+https://github.com/per1234/EEPROMallocation
+https://github.com/per1234/EtherEvent
+https://github.com/per1234/EtherEventQueue
+https://github.com/per1234/MouseTo 
 foo
 https://github.com/micromouseonline/BasicEncoder
 https://github.com/Rad-hi/MyButton_Arduino
@@ -4181,4 +4185,5 @@ https://github.com/lozziboy/arduino-serial-variable-table
 https://github.com/levkovigor/MMC34160PJ
 https://github.com/levkovigor/ppposclient
 https://github.com/levkovigor/GT811
+
 

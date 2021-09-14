@@ -2,6 +2,7 @@
 name: Manage PRs
 
 env:
+  FOO: bar
   SUBMISSION_PARSER_VERSION: 1.1.1 # See: https://github.com/arduino/library-manager-submission-parser/releases
   MAINTAINERS: |
     # GitHub user names to request reviews from in cases where PRs can't be managed automatically.

@@ -1,5 +1,6 @@
 name: Manage PRs
 
+
 env:
   SUBMISSION_PARSER_VERSION: 1.1.1 # See: https://github.com/arduino/library-manager-submission-parser/releases
   MAINTAINERS: |

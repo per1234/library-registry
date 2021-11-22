@@ -24,7 +24,9 @@ on:
       - created
       - edited
 
-concurrency: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
+concurrency:
+  group: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
+  cancel-in-progress: true
 
 jobs:
   diff:

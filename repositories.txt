@@ -1,3 +1,7 @@
+https://github.com/per1234/EEPROMallocation
+https://github.com/per1234/EtherEvent
+https://github.com/per1234/EtherEventQueue
+https://github.com/per1234/MouseTo
 https://github.com/MajicDesigns/MD_SmartCar2
 https://github.com/ncmreynolds/TapCode
 https://github.com/NeMaksym/Arduino-EasySevenSeg
@@ -4387,3 +4391,4 @@ https://github.com/gravitech-engineer/AIS_IoT_4G
 https://github.com/BCISOFT/OvhAPI
 https://github.com/BertanT/Arduino-RGBWConverter
 https://github.com/michaellee8/TimedState
+

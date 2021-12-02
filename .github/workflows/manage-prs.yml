@@ -24,10 +24,6 @@ on:
       - created
       - edited
 
-concurrency:
-  group: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
-  cancel-in-progress: true
-
 jobs:
   diff:
     if: >
@@ -47,6 +43,10 @@ jobs:
       path: ${{ steps.configuration.outputs.path }}
       filename: ${{ steps.configuration.outputs.filename }}
       head: ${{ steps.head.outputs.head }}
+
+    concurrency:
+      group: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
+      cancel-in-progress: true
 
     env:
       # See: https://docs.github.com/en/rest/reference/pulls#custom-media-types-for-pull-requests

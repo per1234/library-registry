@@ -1,4 +1,4 @@
-https://www.arduino.cc/reference/en/foo
+https://www.arduino.cc/reference/en/
 https://github.com/bolderflight/eigen
 https://github.com/bolderflight/control
 https://github.com/bolderflight/imap

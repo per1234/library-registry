@@ -2,6 +2,7 @@ https://github.com/per1234/EEPROMallocation
 https://github.com/per1234/EtherEvent
 https://github.com/per1234/EtherEventQueue
 https://github.com/per1234/MouseTo
+foo
 https://github.com/bolderflight/eigen
 https://github.com/bolderflight/control
 https://github.com/bolderflight/imap

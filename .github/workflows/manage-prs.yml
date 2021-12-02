@@ -26,7 +26,8 @@ on:
 
 concurrency:
   group: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
-  cancel-in-progress: >
+  cancel-in-progress: >-
+    ${{
       (
         github.event_name == 'pull_request_target' &&
         github.event.pull_request.draft == false
@@ -37,6 +38,7 @@ concurrency:
         github.event.issue.state == 'open' &&
         contains(github.event.comment.body, 'ArduinoBot')
       )
+    }}
 
 jobs:
   diff:

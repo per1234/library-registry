@@ -1,4 +1,11 @@
-https://github.com/per1234/wirino
+https://github.com/per1234/EEPROMallocation
+https://github.com/per1234/Numlen
+https://github.com/per1234/EtherEvent
+https://github.com/21tiger/Servo
+https://github.com/per1234/EtherEventQueue
+https://github.com/per1234/ThemeTest
+https://github.com/per1234/WatchdogLog
+https://github.com/per1234/MouseTo 
 https://github.com/bolderflight/eigen
 https://github.com/bolderflight/control
 https://github.com/bolderflight/imap

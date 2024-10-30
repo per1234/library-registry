@@ -414,8 +414,9 @@ jobs:
       - name: Check for existence of submission check failure flag artifact
         id: failure-flag-exists
         continue-on-error: true
+        # actions/download-artifact does not create a folder per its `path` input if no artifacts match `pattern`.
         run: |
-          test -d "${{ env.CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PATH }}/"*
+          test -d "${{ env.CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PATH }}"
 
   check-submissions-fail:
     needs:

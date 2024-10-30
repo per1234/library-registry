@@ -402,13 +402,21 @@ jobs:
     outputs:
       pass: ${{ steps.failure-flag-exists.outcome == 'failure' }}
 
+    env:
+      CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PATH: ${{ github.workspace }}/artifacts
+
     steps:
+      - name: Download submission check failure flag artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ${{ env.CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PATH }}
+          pattern: ${{ env.CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PREFIX }}*
+
       - name: Check for existence of submission check failure flag artifact
         id: failure-flag-exists
-        uses: actions/download-artifact@v4
         continue-on-error: true
-        with:
-          pattern: ${{ env.CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PREFIX }}*
+        run: |
+          test -d "${{ env.CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PATH }}/"*
 
   check-submissions-fail:
     needs:

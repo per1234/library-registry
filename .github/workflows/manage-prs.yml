@@ -7,6 +7,7 @@ env:
     - per1234
   CHECK_SUBMISSIONS_FAIL_FLAG_ARTIFACT_PREFIX: check-submissions-failed-
   ERROR_MESSAGE_PREFIX: ":x: **ERROR:** "
+  FOO: bar
 
 on:
   # pull_request_target trigger is used instead of pull_request so the token will have the write permissions needed to

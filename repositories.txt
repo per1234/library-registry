@@ -1,4 +1,3 @@
-docs.arduino.cc/language-reference/en/foo/
 https://github.com/arslan437/EspFileManager.git
 https://github.com/linus81/PCF8574_LH
 https://github.com/Oshima-Shosen-Robotics-Research-Club/liboshima
@@ -214,6 +213,7 @@ https://github.com/anthonyshibitov/text1306
 https://github.com/0015/LVGL_Joystick
 https://github.com/0015/ChatGPT_Client_For_Arduino
 https://github.com/0015/ESP32-OV5640-AF
+https://github.com/0015/TP_Arduino_DigitalRain_Anim
 https://github.com/0neblock/Arduino_SNMP
 https://github.com/0x6flab/satima-arduinolibrary
 https://github.com/0xCAFEDECAF/VanBus

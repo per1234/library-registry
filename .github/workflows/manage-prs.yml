@@ -436,7 +436,6 @@ jobs:
       needs.parse.outputs.conclusion != 'declined' &&
       needs.check-submissions-result.outputs.pass == 'false'
     runs-on: ubuntu-latest
-
     steps:
       - name: Comment instructions to fix errors detected during submission checks
         uses: octokit/request-action@v2.x
@@ -470,7 +469,6 @@ jobs:
       # request is declined due to unresolvable problems with the libraries.
       - check-submissions
     if: needs.parse.outputs.conclusion == 'declined'
-
     runs-on: ubuntu-latest
     steps:
       - name: Comment reason for declining request

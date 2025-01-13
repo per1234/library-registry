@@ -228,6 +228,55 @@ jobs:
             More information:
             https://github.com/${{ github.repository }}/blob/main/README.md#if-the-problem-is-with-the-pull-request
 
+  # Requester's registry privileges have been revoked.
+  decline-request:
+    needs:
+      - parse
+    if: >
+      needs.parse.outputs.conclusion == 'declined' &&
+      needs.parse.outputs.error != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment reason for declining request
+        uses: octokit/request-action@v2.x
+        if: needs.parse.outputs.error != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: POST /repos/{owner}/{repo}/issues/{issue_number}/comments
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          issue_number: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
+          body: |
+            |
+            Hi @${{ github.actor }}
+            Your request has been declined:
+
+            ${{ env.ERROR_MESSAGE_PREFIX }}${{ needs.parse.outputs.error }}
+
+      - name: Close PR
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: PATCH /repos/{owner}/{repo}/pulls/{pull_number}
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          pull_number: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
+          state: closed
+
+      - name: Add conclusion label to PR
+        uses: octokit/request-action@v2.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          route: PUT /repos/{owner}/{repo}/issues/{issue_number}/labels
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          issue_number: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
+          labels: |
+            - "conclusion: ${{ needs.parse.outputs.conclusion }}"
+
   check-submissions:
     name: Check ${{ matrix.submission.submissionURL }}
     needs:
@@ -235,6 +284,7 @@ jobs:
     if: >
       needs.parse.outputs.type == 'submission' ||
       needs.parse.outputs.type == 'modification'
+
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -470,35 +520,13 @@ jobs:
             More information:
             https://github.com/${{ github.repository }}/blob/main/README.md#if-the-problem-is-with-the-pull-request
 
-  # Handle problem that cannot be resolved by requester.
-  decline:
+  decline-submissions:
     needs:
       - parse
-      # This job is run after check-submissions so that the per-library error comments will be produced in cases where
-      # request is declined due to unresolvable problems with the libraries.
       - check-submissions
     if: needs.parse.outputs.conclusion == 'declined'
     runs-on: ubuntu-latest
     steps:
-      - name: Comment reason for declining request
-        uses: octokit/request-action@v2.x
-        # If request was declined due to problems w/ the requester, needs.parse.outputs.error contains the reason.
-        # If request was declined due to problems w/ libraries, the check-submissions job already provided the comments.
-        if: needs.parse.outputs.error != ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          route: POST /repos/{owner}/{repo}/issues/{issue_number}/comments
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          issue_number: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
-          body: |
-            |
-            Hi @${{ github.actor }}
-            Your request has been declined:
-
-            ${{ env.ERROR_MESSAGE_PREFIX }}${{ needs.parse.outputs.error }}
-
       - name: Close PR
         uses: octokit/request-action@v2.x
         env:
@@ -701,10 +729,11 @@ jobs:
     needs:
       # Run after all other jobs
       - parse-fail
+      - decline-request
       - merge-fail
       - check-submissions-fail
+      - decline-submissions
       - label
-      - decline
       - not-submission
     # Run if any job failed. The workflow is configured so that jobs only fail when there is an unexpected error.
     if: failure()

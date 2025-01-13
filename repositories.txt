@@ -1,4 +1,3 @@
-docs.arduino.cc/language-reference/en/foo/
 https://github.com/rjsachse/ESP32-RTSPServer.git
 https://github.com/schreibfaul1/ESP32-audioI2S
 https://github.com/7Semi/SevenSemiSHT4x_Lib
@@ -309,6 +308,7 @@ https://github.com/anthonyshibitov/text1306
 https://github.com/0015/LVGL_Joystick
 https://github.com/0015/ChatGPT_Client_For_Arduino
 https://github.com/0015/ESP32-OV5640-AF
+https://github.com/0015/TP_Arduino_DigitalRain_Anim
 https://github.com/0neblock/Arduino_SNMP
 https://github.com/0x6flab/satima-arduinolibrary
 https://github.com/0xCAFEDECAF/VanBus

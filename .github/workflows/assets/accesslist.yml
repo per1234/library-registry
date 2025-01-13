@@ -2,6 +2,10 @@
 # This file is used by https://github.com/arduino/library-registry-submission-parser, via the "Manage PRs" workflow.
 
 - host: github.com
+  name: sparkfun
+  access: deny
+  reference: https://example.com
+- host: github.com
   name: per1234
   access: allow
   reference:

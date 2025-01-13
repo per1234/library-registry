@@ -284,6 +284,15 @@ jobs:
         if: matrix.submission.error != ''
         run: echo "PASS=false" >> "$GITHUB_ENV"
 
+      # Parser checks are relevant in the case where request is declined due to registry access having been revoked for
+      # the library repository owners. However, the rest of the checks are irrelevant and may result in confusing
+      # comments from the bot, so should be skipped.
+      - name: Skip the rest of the checks if request is declined
+        if: >
+          needs.parse.outputs.conclusion == 'declined' &&
+          env.PASS == 'true'
+        run: echo "PASS=false" >> "$GITHUB_ENV"
+
       - name: Install Arduino Lint
         if: env.PASS == 'true'
         run: |

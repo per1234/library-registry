@@ -471,7 +471,7 @@ jobs:
             https://github.com/${{ github.repository }}/blob/main/README.md#if-the-problem-is-with-the-pull-request
 
   # Handle problem that cannot be resolved by requester.
-  declined:
+  decline:
     needs:
       - parse
       # This job is run after check-submissions so that the per-library error comments will be produced in cases where
@@ -704,7 +704,7 @@ jobs:
       - merge-fail
       - check-submissions-fail
       - label
-      - declined
+      - decline
       - not-submission
     # Run if any job failed. The workflow is configured so that jobs only fail when there is an unexpected error.
     if: failure()

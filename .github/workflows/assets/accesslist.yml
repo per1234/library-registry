@@ -9,3 +9,7 @@
   name: 7Semi
   access: deny
   reference: https://example.com#todo
+- host: github.com
+  name: YoavPaz
+  access: deny
+  reference: https://example.com#todo

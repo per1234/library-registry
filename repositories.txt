@@ -7694,3 +7694,4 @@ https://github.com/YoavPaz/I2CR-CPP
 https://github.com/Alex-Stone-Github/CNCShield
 https://github.com/bitbank2/FastEPD
 https://github.com/jerry-magnin/Mem24CSM01
+

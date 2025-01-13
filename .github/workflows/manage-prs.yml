@@ -270,7 +270,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          route: PUT /repos/{owner}/{repo}/issues/{issue_number}/labels
+          # See: https://docs.github.com/rest/issues/labels#add-labels-to-an-issue
+          route: POST /repos/{owner}/{repo}/issues/{issue_number}/labels
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
           issue_number: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}
@@ -543,7 +544,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          route: PUT /repos/{owner}/{repo}/issues/{issue_number}/labels
+          # See: https://docs.github.com/rest/issues/labels#add-labels-to-an-issue
+          route: POST /repos/{owner}/{repo}/issues/{issue_number}/labels
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
           issue_number: ${{ github.event.pull_request.number }}${{ github.event.issue.number }}

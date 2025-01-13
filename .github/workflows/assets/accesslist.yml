@@ -5,3 +5,7 @@
   name: per1234
   access: allow
   reference:
+- host: github.com
+  name: 7Semi
+  access: deny
+  reference: https://example.com#todo

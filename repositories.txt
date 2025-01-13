@@ -1,3 +1,5 @@
+https://github.com/arduino/Servo
+https://github.com/sparkfun/BMP180_Breakout_Arduino_Library
 https://github.com/rjsachse/ESP32-RTSPServer.git
 https://github.com/schreibfaul1/ESP32-audioI2S
 https://github.com/7Semi/SevenSemiSHT4x_Lib
